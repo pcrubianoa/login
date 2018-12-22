@@ -16,24 +16,13 @@
 
 	if($usu = $usuario->selectAll()) {
 		$_SESSION['id_empresa']=$usu[0]['id_empresa'];
-		if ($usu[0]['fecha_caducidad']>=$hoy)
+		if ($usu[0]['fecha_caducidad']>$hoy)
 			header("Location:../../../app/res/validacion/?usuario=".$data[0]."&clave=".$_POST["clave"]."&empresa=".$data[1]);
 		else {
 			header("Location:../../../account/res/validacion/?key=".$data[0]."&empresa=".$data[1]);
 		}
 	} else {
 		header("Location:../../?error=402");
-/*
-
-        $mysqli = new mysqli("200.71.58.53", "root", "4dministrad0r", "logis_users");
-        if ($mysqli->connect_errno) {
-            echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-            
-        }
-        echo $mysqli->host_info . "\n";
-        echo "<br>Conectado desde: ".$_SERVER['SERVER_ADDR'];
-
-		//print_r($usu);*/
 	}
 
 	unset($usuario);
