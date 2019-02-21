@@ -21,9 +21,9 @@
 		$diff = round(($venc-$hoy) / 86400); 
 		$_SESSION['limit_days'] = $diff;
 
-		if ($diff > 0)
+		if ($diff >= 0) //echo $_SESSION['limit_days'];
 			header("Location:../../../app/res/validacion/?usuario=".$data[0]."&clave=".$_POST["clave"]."&empresa=".$data[1]);
-		else {
+		else { //echo $_SESSION['limit_days'];
 			header("Location:../../../account/res/validacion/?key=".$data[0]."&empresa=".$data[1]);
 		}
 	} else {
