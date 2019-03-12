@@ -1,4 +1,4 @@
-<?php	session_start();
+<?	@session_start();
 	define('DB_HOST', 'localhost');
 	define('DB_NAME', 'logis_users');
 	define('DB_USER', 'root');

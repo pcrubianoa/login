@@ -1,4 +1,4 @@
-<? session_start();
+<? @session_start();
 	require_once 'DB.php';
 	abstract class Crud extends DB {
 		protected $table;

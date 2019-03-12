@@ -1,4 +1,4 @@
-<? session_start();
+<? @session_start();
 require_once 'config.php';
 
 class DB {
