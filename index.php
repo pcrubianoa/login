@@ -44,18 +44,24 @@
                             </div>
                         </form>
                         <?
-							if (isset($_GET['error'])) {
-								if ($_GET['error']=='402') { ?>
+							if (isset($_GET['code'])) {
+								if ($_GET['code']=='402') { ?>
 									<p>
 										Nombre de usuario o clave incorrectos.<br>
 									</p>
 								<?}
 
-								if ($_GET['error']=='403') { ?>
+								if ($_GET['code']=='403') { ?>
 									<p>
 										Acceso no autorizado.
 									</p>
 								<?}
+
+                                if (isset($_GET['timeout'])) { ?>
+                                    <p>
+                                        Sesión caducada por inactividad.<br>
+                                    </p>
+                                <?}
 							}?>
                         <div class="other-links">
                             <span>Powered by</span><a target="_BLANK" href="http://pclinea.com.co"><img height="30" src="./images/logo.png"></a>

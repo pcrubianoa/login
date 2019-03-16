@@ -30,7 +30,7 @@
 		if ($data[0]=='development') {
 			header("Location:../../../app/res/validacion/?usuario=".$data[0]."&clave=".$_POST["clave"]."&empresa=".$data[1]);
 		} else {
-			header("Location:../../?error=402");
+			header("Location:../../?code=402");
 		}
 	}
 
